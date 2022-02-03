@@ -10,6 +10,12 @@
     "experimentalDecorators": true,
     "moduleResolution": "node",
     "importHelpers": true,
+    "paths": {
+      "ngx-mat-phonenumber": [
+        "dist/ngx-mat-phonenumber/ngx-mat-phonenumber",
+        "dist/ngx-mat-phonenumber"
+      ]
+    },
     "target": "es2015",
     "module": "es2020",
     "lib": [

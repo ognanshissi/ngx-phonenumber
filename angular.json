@@ -3,5 +3,46 @@
   "version": 1,
   "newProjectRoot": "projects",
   "projects": {
-  }
+    "ngx-mat-phonenumber": {
+      "projectType": "library",
+      "root": "projects/ngx-mat-phonenumber",
+      "sourceRoot": "projects/ngx-mat-phonenumber/src",
+      "prefix": "lib",
+      "architect": {
+        "build": {
+          "builder": "@angular-devkit/build-angular:ng-packagr",
+          "options": {
+            "tsConfig": "projects/ngx-mat-phonenumber/tsconfig.lib.json",
+            "project": "projects/ngx-mat-phonenumber/ng-package.json"
+          },
+          "configurations": {
+            "production": {
+              "tsConfig": "projects/ngx-mat-phonenumber/tsconfig.lib.prod.json"
+            }
+          }
+        },
+        "test": {
+          "builder": "@angular-devkit/build-angular:karma",
+          "options": {
+            "main": "projects/ngx-mat-phonenumber/src/test.ts",
+            "tsConfig": "projects/ngx-mat-phonenumber/tsconfig.spec.json",
+            "karmaConfig": "projects/ngx-mat-phonenumber/karma.conf.js"
+          }
+        },
+        "lint": {
+          "builder": "@angular-devkit/build-angular:tslint",
+          "options": {
+            "tsConfig": [
+              "projects/ngx-mat-phonenumber/tsconfig.lib.json",
+              "projects/ngx-mat-phonenumber/tsconfig.spec.json"
+            ],
+            "exclude": [
+              "**/node_modules/**"
+            ]
+          }
+        }
+      }
+    }
+  },
+  "defaultProject": "ngx-mat-phonenumber"
 }
